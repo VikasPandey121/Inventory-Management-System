@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "514388007295",
+    "firebase_url": "https://qrcode-2727b.firebaseio.com",
+    "project_id": "qrcode-2727b",
+    "storage_bucket": "qrcode-2727b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514388007295:android:ddeb07d712ea1df319e24a",
+        "android_client_info": {
+          "package_name": "myfirstapkas.com.qrcode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514388007295-uu4p3g3fb94kimu9pvrur1hfu4u9lsd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3V9UAbq4uId2R8bZ0cn9kGKqM-G6_ArM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514388007295-uu4p3g3fb94kimu9pvrur1hfu4u9lsd0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
