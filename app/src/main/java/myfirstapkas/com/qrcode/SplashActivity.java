@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.pushbots.push.Pushbots;
+
 public class SplashActivity extends AppCompatActivity {
 
     private ImageView logo;
@@ -17,6 +19,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
         logo=(ImageView)findViewById(R.id.imageView);
 
         Animation myanim = AnimationUtils.loadAnimation(SplashActivity.this,R.anim.shade);

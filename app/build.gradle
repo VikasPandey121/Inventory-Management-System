@@ -10,6 +10,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
+        manifestPlaceholders = [
+                pushbots_app_id               : "5e26adb970cc0e20e12e1424",
+                pushbots_loglevel             : "DEBUG",
+                google_sender_id              : "514388007295"
+        ]
     }
     buildTypes {
         release {
@@ -33,6 +38,9 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.android.libraries.places:places:2.1.0'
+
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    implementation 'com.pushbots:pushbots-lib:3.2.8@aar'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

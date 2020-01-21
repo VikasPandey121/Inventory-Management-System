@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FareCare</string>
+    <string name="app_name">FairCare</string>
     <string name="title_activity_qr_">QR_Activity</string>
     <string name="drawerOpen">drawerOpen</string>
     <string name="drawerClose">drawerClose</string>
