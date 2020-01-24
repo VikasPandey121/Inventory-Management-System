@@ -49,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this,pairs);
-                    startActivity(intent,options.toBundle());
+                             startActivity(intent,options.toBundle());
 
                 }
             }
