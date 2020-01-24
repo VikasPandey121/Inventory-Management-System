@@ -39,8 +39,21 @@
         android:id="@+id/serviceinfo"/>
 
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Next Service"
+        android:id="@id/servicedate"
+        android:inputType="number"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
 
-
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next Service"
+        android:id="@+id/nexts"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
 
 </LinearLayout>

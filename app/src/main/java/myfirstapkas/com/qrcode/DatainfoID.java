@@ -27,7 +27,11 @@ public class DatainfoID extends Navigation {
    TextView date;
     TextView time;
     TextView service;
-     @Override
+    Button updatese;
+    EditText servicedate;
+    DatabaseReference myRef;
+    String update;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datainfo_id);
@@ -37,7 +41,8 @@ public class DatainfoID extends Navigation {
          date= findViewById(R.id.infodate);
           time =findViewById(R.id.infotime);
           service = findViewById(R.id.serviceinfo);
-
+          updatese = findViewById(R.id.nexts);
+          servicedate = findViewById(R.id.servicedate);
           //Need to delete after try
          Bundle bundle = getIntent().getExtras();
          final String message = bundle.getString("message");
@@ -49,7 +54,8 @@ public class DatainfoID extends Navigation {
             public void onClick(View view) {
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-                DatabaseReference myRef = database.getReference("Inventory");
+               // DatabaseReference
+                        myRef = database.getReference("Inventory");
               // servicehj = scanid;
 
                 //remove below line
@@ -83,7 +89,13 @@ public class DatainfoID extends Navigation {
 
             }
         });
-
+        updatese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                 update = servicedate.getText().toString();
+                myRef.child(message).child("Upcoming").setValue(date);
+            }
+        });
 
 
     }
