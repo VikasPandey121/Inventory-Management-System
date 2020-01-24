@@ -3,12 +3,15 @@ package myfirstapkas.com.qrcode;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -26,6 +29,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     MenuItem scan_btn;
     AppCompatActivity activity;
     String scanid;
+    CardView testing;
 
 
     @Override
@@ -41,6 +45,15 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         activity = this;
         //till this
 
+        testing = findViewById(R.id.testing);
+        testing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Navigation.this, "Successfull", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
+        
         drawerLayout = findViewById(R.id.drawer);
         toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.navigationView);

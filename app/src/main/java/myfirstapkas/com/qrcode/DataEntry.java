@@ -29,8 +29,8 @@ public class DataEntry extends AppCompatActivity {
     EditText itemname;
     EditText itemdate;
     EditText itemtime;
-   // FirebaseDatabase Database;
- // DatabaseReference myRef;
+    // FirebaseDatabase Database;
+    // DatabaseReference myRef;
 
 
     //private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -96,9 +96,6 @@ public class DataEntry extends AppCompatActivity {
                     }
 
                 }
-
-
-
 
             }
         });
