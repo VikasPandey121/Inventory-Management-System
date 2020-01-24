@@ -27,18 +27,10 @@ public class DatainfoID extends Navigation {
    TextView date;
     TextView time;
     TextView service;
-    String servicehj;
-    //Need to remove below one after testing
-    TextView testingApplication;
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datainfo_id);
-
-        //Remove whatever is between this segment
-
-         testingApplication = findViewById(R.id.testingApplication);
-         //Remove whatever is between this segment
 
           infoi =findViewById(R.id.dataid);
            name =findViewById(R.id.infoname);
@@ -48,9 +40,8 @@ public class DatainfoID extends Navigation {
 
           //Need to delete after try
          Bundle bundle = getIntent().getExtras();
-         String message = bundle.getString("message");
-         testingApplication.setText(message);
-         //Need to delete after try
+         final String message = bundle.getString("message");
+        
 
         final Button  info =findViewById(R.id.enter);
         info.setOnClickListener(new View.OnClickListener() {
@@ -68,10 +59,10 @@ public class DatainfoID extends Navigation {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                      // siname = dataSnapshot.child(servicehj).child("Name").getValue().toString();
-                      //   idate = dataSnapshot.child(servicehj).child("Date").getValue().toString();
-                     //        itime = dataSnapshot.child(servicehj).child("Time").getValue().toString();
-                     //       serviceinfo = dataSnapshot.child(servicehj).child("Service").getValue().toString();
+                       siname = dataSnapshot.child(message).child("Name").getValue().toString();
+                         idate = dataSnapshot.child(message).child("Date").getValue().toString();
+                             itime = dataSnapshot.child(message).child("Time").getValue().toString();
+                            serviceinfo = dataSnapshot.child(message).child("Service").getValue().toString();
 
 
                             name.setText("NAME  "+siname);

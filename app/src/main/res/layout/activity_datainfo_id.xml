@@ -38,12 +38,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/serviceinfo"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/testingApplication"
-        android:text="Not recieved any thing yet"
-        android:textSize="30dp"/>
 
 
 
