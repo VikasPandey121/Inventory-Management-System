@@ -29,7 +29,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     MenuItem scan_btn;
     AppCompatActivity activity;
     String scanid;
-    CardView testing;
+    CardView installInventory, scannerInventory, locateInventory, groupChat;
 
 
     @Override
@@ -45,11 +45,51 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         activity = this;
         //till this
 
-        testing = findViewById(R.id.testing);
-        testing.setOnClickListener(new View.OnClickListener() {
+        installInventory = findViewById(R.id.installInventory);
+        installInventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Navigation.this, "Successfull", Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(Navigation.this, "Sucessfull", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Navigation.this, DataEntry.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+        //2nd CardView Details
+        scannerInventory = findViewById(R.id.scannerInventory);
+        scannerInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentIntegrator integrator = new IntentIntegrator(activity);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setPrompt("Scan");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setBarcodeImageEnabled(false);
+                integrator.initiateScan();
+
+            }
+        });
+
+        // 3rd CardView Details
+        locateInventory = findViewById(R.id.locateInventory);
+        locateInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(Navigation.this, MapsActivityCurrentPlace.class);
+                startActivity(intent2);
+                finish();
+            }
+        });
+
+        //4rd CardView Details
+        groupChat = findViewById(R.id.groupChat);
+        groupChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Detials here
             }
         });
         
@@ -72,18 +112,10 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.scanner:{
-                IntentIntegrator integrator = new IntentIntegrator(activity);
-                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setPrompt("Scan");
-                integrator.setCameraId(0);
-                integrator.setBeepEnabled(false);
-                integrator.setBarcodeImageEnabled(false);
-                integrator.initiateScan();
+
                 break;}
             case R.id.qrGenerator:
-              Intent intent = new Intent(Navigation.this, DataEntry.class);
-              startActivity(intent);
-              finish();
+
 
                 break;
             case R.id.map:

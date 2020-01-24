@@ -33,7 +33,7 @@
 
 
         <androidx.cardview.widget.CardView
-                android:id="@+id/testing"
+                android:id="@+id/installInventory"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="clip_horizontal"
@@ -44,7 +44,6 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/datainfo" />
@@ -53,7 +52,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/testing2"
+                android:id="@+id/scannerInventory"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="clip_horizontal"
@@ -65,7 +64,6 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/generator" />
@@ -85,7 +83,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/testing3"
+                android:id="@+id/locateInventory"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="clip_horizontal"
@@ -96,7 +94,6 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/location" />
@@ -105,7 +102,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/testing4"
+                android:id="@+id/groupChat"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="clip_horizontal"
