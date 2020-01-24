@@ -147,6 +147,8 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
             }
             else {
                  scanid = result.getContents();
+                 Intent intent = new Intent(Navigation.this,DatainfoID.class);
+                 startActivity(intent);
                 Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
             }
         }

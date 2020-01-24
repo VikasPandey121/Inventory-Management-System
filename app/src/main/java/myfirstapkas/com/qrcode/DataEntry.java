@@ -29,6 +29,8 @@ public class DataEntry extends AppCompatActivity {
     EditText itemname;
     EditText itemdate;
     EditText itemtime;
+    EditText service;
+    EditText upcomingservice;
     // FirebaseDatabase Database;
     // DatabaseReference myRef;
 
@@ -60,6 +62,8 @@ public class DataEntry extends AppCompatActivity {
         itemid = findViewById(R.id.itemid);
         itemname = findViewById(R.id.name);
         itemtime = findViewById(R.id.time);
+        service = findViewById(R.id.servicedate);
+        upcomingservice = findViewById(R.id.next);
 
 
 
@@ -72,6 +76,8 @@ public class DataEntry extends AppCompatActivity {
                 String name = itemname.getText().toString();
                  String time = itemtime.getText().toString();
                   String date = itemdate.getText().toString();
+                  String upcoming = upcomingservice.getText().toString();
+                  String Service = service.getText().toString();
 
                 if(!id.equalsIgnoreCase(""))
                 {
@@ -84,6 +90,8 @@ public class DataEntry extends AppCompatActivity {
                             myRef.child(id).child("ID").setValue(id);
                 myRef.child(id).child("Name").setValue(name);
                 myRef.child(id).child("Time").setValue(time);
+                myRef.child(id).child("Service").setValue(Service);
+                myRef.child(id).child("Upcoming").setValue(upcoming);
                 myRef.child(id).child("Date").setValue(date).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
