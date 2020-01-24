@@ -91,7 +91,7 @@ public class DataEntry extends AppCompatActivity {
                 myRef.child(id).child("Name").setValue(name);
                 myRef.child(id).child("Time").setValue(time);
                 myRef.child(id).child("Service").setValue(Service);
-                myRef.child(id).child("Upcoming").setValue(upcoming);
+                myRef.child(id).child("Upcoming").child(upcoming).setValue(upcoming);
                 myRef.child(id).child("Date").setValue(date).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

@@ -28,9 +28,9 @@ public class DatainfoID extends Navigation {
     TextView time;
     TextView service;
     Button updatese;
-    EditText servicedate;
+    EditText servdate;
     DatabaseReference myRef;
-    String update;
+    String message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +42,10 @@ public class DatainfoID extends Navigation {
           time =findViewById(R.id.infotime);
           service = findViewById(R.id.serviceinfo);
           updatese = findViewById(R.id.nexts);
-          servicedate = findViewById(R.id.servicedate);
+          servdate = findViewById(R.id.servicedate);
           //Need to delete after try
          Bundle bundle = getIntent().getExtras();
-         final String message = bundle.getString("message");
+         message = bundle.getString("message");
         
 
         final Button  info =findViewById(R.id.enter);
@@ -92,8 +92,8 @@ public class DatainfoID extends Navigation {
         updatese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 update = servicedate.getText().toString();
-                myRef.child(message).child("Upcoming").setValue(date);
+                String update = servdate.getText().toString();
+                myRef.child(message).child("Upcoming").child(update).setValue(update);
             }
         });
 
