@@ -14,11 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.sql.BatchUpdateException;
 
 
 public class signupActivity extends AppCompatActivity {
@@ -37,11 +40,11 @@ public class signupActivity extends AppCompatActivity {
         firebaseAuth =FirebaseAuth.getInstance();
        databaseuser = firebaseDatabase.getInstance().getReferenceFromUrl("https://qrcode-2727b.firebaseio.com/");
 
-        TextView loginbtn = findViewById(R.id.signuplogin);
-         Button signup =  findViewById(R.id.signup);
-        final TextView username =findViewById(R.id.signupusername);
-        final TextView signemail =findViewById(R.id.signupemail);
-        final EditText signpassword =findViewById(R.id.signuppassword);
+        Button loginbtn = findViewById(R.id.signuplogin);
+         Button signupbtn =  findViewById(R.id.signup);
+        final TextInputLayout username =findViewById(R.id.signupusername);
+        final TextInputLayout signemail =findViewById(R.id.signupemail);
+        final TextInputLayout signpassword =findViewById(R.id.signuppassword);
 
 
 
@@ -72,13 +75,13 @@ public class signupActivity extends AppCompatActivity {
             }
         });
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-              String name = username.getText().toString();
-               String email = signemail.getText().toString();
-           String password = signpassword.getText().toString();
+              String name = username.getEditText().getText().toString();
+               String email = signemail.getEditText().getText().toString();
+           String password = signpassword.getEditText().getText().toString();
 
 
                 if(!name.equalsIgnoreCase(""))
