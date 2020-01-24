@@ -31,6 +31,9 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     String scanid;
     CardView installInventory, scannerInventory, locateInventory, groupChat;
 
+    //Might need to delete it
+    public static final String ARG_FROM_MAIN = "arg";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,10 +149,16 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
             }
             else {
-                 scanid = result.getContents();
+                 scanid =(result.getContents());
                  Intent intent = new Intent(Navigation.this,DatainfoID.class);
+                 //intent.putExtra("arg", getText()); // getText() SHOULD NOT be static!!!
+                //String value = ed1.getText().toString()
+
+                intent.putExtra("message", scanid);
                  startActivity(intent);
                 Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+
+
             }
         }
         else {

@@ -28,17 +28,29 @@ public class DatainfoID extends Navigation {
     TextView time;
     TextView service;
     String servicehj;
+    //Need to remove below one after testing
+    TextView testingApplication;
      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datainfo_id);
 
+        //Remove whatever is between this segment
+
+         testingApplication = findViewById(R.id.testingApplication);
+         //Remove whatever is between this segment
 
           infoi =findViewById(R.id.dataid);
            name =findViewById(R.id.infoname);
          date= findViewById(R.id.infodate);
           time =findViewById(R.id.infotime);
           service = findViewById(R.id.serviceinfo);
+
+          //Need to delete after try
+         Bundle bundle = getIntent().getExtras();
+         String message = bundle.getString("message");
+         testingApplication.setText(message);
+         //Need to delete after try
 
         final Button  info =findViewById(R.id.enter);
         info.setOnClickListener(new View.OnClickListener() {
@@ -47,16 +59,19 @@ public class DatainfoID extends Navigation {
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
                 DatabaseReference myRef = database.getReference("Inventory");
-                servicehj = scanid;
+              // servicehj = scanid;
+
+                //remove below line
+
 
              myRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                       siname = dataSnapshot.child(servicehj).child("Name").getValue().toString();
-                         idate = dataSnapshot.child(servicehj).child("Date").getValue().toString();
-                             itime = dataSnapshot.child(servicehj).child("Time").getValue().toString();
-                            serviceinfo = dataSnapshot.child(servicehj).child("Service").getValue().toString();
+                      // siname = dataSnapshot.child(servicehj).child("Name").getValue().toString();
+                      //   idate = dataSnapshot.child(servicehj).child("Date").getValue().toString();
+                     //        itime = dataSnapshot.child(servicehj).child("Time").getValue().toString();
+                     //       serviceinfo = dataSnapshot.child(servicehj).child("Service").getValue().toString();
 
 
                             name.setText("NAME  "+siname);
