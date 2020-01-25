@@ -1,11 +1,14 @@
 package myfirstapkas.com.qrcode;
 
+import android.app.ActivityOptions;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,8 +30,10 @@ import java.sql.BatchUpdateException;
 public class signupActivity extends AppCompatActivity {
     FirebaseAuth  firebaseAuth;
     ProgressDialog progressDialog;
-
+    ImageView image;
+    TextView logotext,text;
     DatabaseReference databaseuser;
+
     FirebaseDatabase firebaseDatabase;
     private FirebaseAuth.AuthStateListener mAuthStatelisterner;
 
@@ -40,11 +45,14 @@ public class signupActivity extends AppCompatActivity {
         firebaseAuth =FirebaseAuth.getInstance();
        databaseuser = firebaseDatabase.getInstance().getReferenceFromUrl("https://qrcode-2727b.firebaseio.com/");
 
-        Button loginbtn = findViewById(R.id.signuplogin);
+        final Button loginbtn = findViewById(R.id.signuplogin);
          Button signupbtn =  findViewById(R.id.signup);
         final TextInputLayout username =findViewById(R.id.signupusername);
         final TextInputLayout signemail =findViewById(R.id.signupemail);
         final TextInputLayout signpassword =findViewById(R.id.signuppassword);
+        image= findViewById(R.id.logoimage1);
+        logotext= findViewById(R.id.logoname1);
+        text= findViewById(R.id.textlogo);
 
 
 
@@ -57,7 +65,7 @@ public class signupActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mfirebaseuser=  firebaseAuth.getCurrentUser();
                 if(mfirebaseuser != null){
-                    Intent i =new Intent(signupActivity.this,Navigation.class);
+                    Intent i =new Intent(signupActivity.this,dashboard.class);
                     startActivity(i);
                 }
                 else {
@@ -72,6 +80,8 @@ public class signupActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(signupActivity.this,loginActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
 
@@ -124,6 +134,7 @@ public class signupActivity extends AppCompatActivity {
                             Toast.makeText(signupActivity.this, "User is Registered Successfully", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(signupActivity.this,loginActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                         else{
                             progressDialog.dismiss();

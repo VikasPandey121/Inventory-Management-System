@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,12 +32,7 @@ public class DataEntry extends AppCompatActivity {
     Button btn;
     Button Enter;
     Button Generate;
-    EditText itemid;
-    EditText itemname;
-    EditText itemdate;
-    EditText itemtime;
-    EditText service;
-    EditText upcomingservice;
+    TextInputLayout itemid,itemname,itemdate,itemtime,upcomingservice,service;
     // FirebaseDatabase Database;
     // DatabaseReference myRef;
     Calendar calendar;
@@ -64,16 +61,17 @@ public class DataEntry extends AppCompatActivity {
 
 
         btn = findViewById(R.id.logout);
-        itemdate =findViewById(R.id.date);
+       // itemdate =findViewById(R.id.servicedate);
         Enter = findViewById(R.id.button);
-        Generate=findViewById(R.id.generate);
+      //  Generate=findViewById(R.id.);
         itemid = findViewById(R.id.itemid);
-        itemname = findViewById(R.id.name);
-        itemtime = findViewById(R.id.time);
+        itemname = findViewById(R.id.itemname);
+       itemtime = findViewById(R.id.time);
+
         service = findViewById(R.id.servicedate);
         upcomingservice = findViewById(R.id.next);
         currentDate = DateFormat.getDateInstance().format(calendar.getTime());
-        service.setText(currentDate);
+        service.getEditText().setText(currentDate);
         upcomingservice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,7 +97,7 @@ public class DataEntry extends AppCompatActivity {
                 c.set(Calendar.MONTH,i1);
                 c.set(Calendar.DAY_OF_MONTH,i2);
                  servicedatest = DateFormat.getDateInstance().format(c.getTime());
-                upcomingservice.setText(servicedatest);
+                upcomingservice.getEditText().setText(servicedatest);
             }
         };
 
@@ -107,12 +105,12 @@ public class DataEntry extends AppCompatActivity {
         Enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String id = itemid.getText().toString();
-                String name = itemname.getText().toString();
-                 String time = itemtime.getText().toString();
-                  String date = itemdate.getText().toString();
-                  String upcoming = upcomingservice.getText().toString();
-               //   String Service = service.getText().toString();
+                String id = itemid.getEditText().getText().toString();
+                String name = itemname.getEditText().getText().toString();
+                 String time = itemtime.getEditText().getText().toString();
+               //   String date = itemdate.getEditText().getText().toString();
+                  String upcoming = upcomingservice.getEditText().getText().toString();
+                 String Service = service.getEditText().getText().toString();
 
 
                 if(!id.equalsIgnoreCase(""))
@@ -121,21 +119,27 @@ public class DataEntry extends AppCompatActivity {
                     {
                         if(!time.equalsIgnoreCase("")){
 
-                        if(!date.equalsIgnoreCase("")){
+                        {//if(!service.equalsIgnoreCase(""))
                             myRef.child("ID").setValue(id);
                             myRef.child(id).child("ID").setValue(id);
                 myRef.child(id).child("Name").setValue(name);
                 myRef.child(id).child("Time").setValue(time);
                 myRef.child(id).child("Service").setValue(currentDate);
                 myRef.child(id).child("Upcoming").child(upcoming).setValue(upcoming);
-                myRef.child(id).child("Date").setValue(date).addOnCompleteListener(new OnCompleteListener<Void>() {
+                myRef.child(id).child("Date").setValue(Service).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
+
+
                         Toast.makeText(getApplicationContext(),"Data Enter Successfully",Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(DataEntry.this,GeneratorActivity.class);
+                        startActivity(intent);
+                        finish();
+
                     }
-                });}else {
+                });}
+                        }else {
                             Toast.makeText(getApplicationContext(),"Error In Entering Data",Toast.LENGTH_SHORT).show();
-                        }
                         }
                     }
 
@@ -147,7 +151,7 @@ public class DataEntry extends AppCompatActivity {
 
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
+      /*  btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
@@ -155,15 +159,13 @@ public class DataEntry extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
-        Generate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(DataEntry.this,GeneratorActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        });*/
+      //  Generate.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+          //  public void onClick(View view) {
+
+       //     }
+       // });
 
     }
 

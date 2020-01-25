@@ -11,9 +11,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resValue "string", "google_maps_key", (project.findProperty("GOOGLE_MAPS_API_KEY") ?: "")
         manifestPlaceholders = [
-                pushbots_app_id               : "5e26adb970cc0e20e12e1424",
-                pushbots_loglevel             : "DEBUG",
-                google_sender_id              : "514388007295"
+                pushbots_app_id  : "5e26adb970cc0e20e12e1424",
+                pushbots_loglevel: "DEBUG",
+                google_sender_id : "514388007295"
         ]
     }
     buildTypes {

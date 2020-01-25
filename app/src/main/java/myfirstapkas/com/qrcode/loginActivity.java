@@ -35,7 +35,7 @@ public class loginActivity extends AppCompatActivity{
     private FirebaseAuth.AuthStateListener mAuthStatelisterner;
 
 
-         @Override
+    @Override
         protected void onCreate(Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
@@ -57,7 +57,7 @@ public class loginActivity extends AppCompatActivity{
                         FirebaseUser mfirebaseuser=  mfirebaseAuth.getCurrentUser();
                             if(mfirebaseuser != null){
                                 Toast.makeText(loginActivity.this, "You are logged in", Toast.LENGTH_SHORT).show();
-                                Intent i =new Intent(loginActivity.this,Navigation.class);
+                                Intent i =new Intent(loginActivity.this,dashboard.class);
                                 startActivity(i);
                             }
                             else {
@@ -113,7 +113,7 @@ public class loginActivity extends AppCompatActivity{
                                     }
                                     else
                                     {
-                                        Intent intohome = new Intent(loginActivity.this,Navigation.class);
+                                        Intent intohome = new Intent(loginActivity.this,dashboard.class);
                                         startActivity(intohome);
                                     }
                                 }

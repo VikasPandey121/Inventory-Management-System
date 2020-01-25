@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".loginActivity"
     android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".loginActivity">
+    android:background="#fff"
+    android:padding="20dp">
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/logoimage"
         android:layout_width="120dp"

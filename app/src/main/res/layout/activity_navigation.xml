@@ -7,10 +7,10 @@
     android:layout_width="match_parent"
     tools:openDrawer="end"
     android:id="@+id/drawer"
-    android:background="@color/c1"
+
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <!--android:background="@color/c3"-->
 
 
 
@@ -23,7 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/toolbar"
-                android:background="@color/c1"/>
+            />
+        <!--android:background="@color/c3"-->
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -137,9 +138,10 @@
         android:id="@+id/navigationView"
         app:menu="@menu/menu_item"
         app:headerLayout="@layout/header"
-        android:background="@color/c3"
         android:layout_gravity="start"
         app:itemTextColor="#fff"/>
+    <!--android:background="@color/c3"-->
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
