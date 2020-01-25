@@ -22,12 +22,12 @@ public class DatainfoID extends dashboard{
     String idate;
     String itime;
     String serviceinfo;
-    EditText infoi;
+    //EditText infoi;
     TextView name;
    TextView date;
     TextView time;
     TextView service;
-    Button updatese;
+    TextView updatese;
     EditText servdate;
     DatabaseReference myRef;
     String message;
@@ -36,22 +36,22 @@ public class DatainfoID extends dashboard{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datainfo_id);
 
-          infoi =findViewById(R.id.dataid);
+         // infoi =findViewById(R.id.dataid);
            name =findViewById(R.id.infoname);
          date= findViewById(R.id.infodate);
           time =findViewById(R.id.infotime);
           service = findViewById(R.id.serviceinfo);
           updatese = findViewById(R.id.nexts);
-          servdate = findViewById(R.id.servicedate);
+          servdate = findViewById(R.id.infoservicedate);
           //Need to delete after try
          Bundle bundle = getIntent().getExtras();
          message = bundle.getString("message");
         
 
-        final Button  info =findViewById(R.id.enter);
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        //final Button  info =findViewById(R.id.enter);
+     //   info.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+      //     public void onClick(View view) {
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
                // DatabaseReference
@@ -87,8 +87,8 @@ public class DatainfoID extends dashboard{
                 });
 
 
-            }
-        });
+            //}
+     // });
         updatese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -154,10 +154,7 @@ public class DataEntry extends AppCompatActivity {
       /*  btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(DataEntry.this,loginActivity.class);
-                startActivity(intent);
-                finish();
+
             }
         });*/
       //  Generate.setOnClickListener(new View.OnClickListener() {

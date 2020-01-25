@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.pushbots.push.Pushbots;
@@ -152,7 +153,12 @@ public class dashboard extends AppCompatActivity implements OnNavigationItemSele
 
 
             case R.id.nav_logout:
-                menu.findItem(R.id.nav_logout).setVisible(false);
+                //menu.findItem(R.id.nav_logout).setVisible(false);
+
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(dashboard.this,loginActivity.class);
+                startActivity(intent);
+                finish();
                 break;
 
 
