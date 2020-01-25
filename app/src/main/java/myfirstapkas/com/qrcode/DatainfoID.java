@@ -27,7 +27,7 @@ public class DatainfoID extends dashboard{
    TextView date;
     TextView time;
     TextView service;
-    TextView updatese;
+    Button updatese;
     EditText servdate;
     DatabaseReference myRef;
     String message;

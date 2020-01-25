@@ -449,9 +449,8 @@
         app:layout_constraintVertical_bias="0.038">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="205dp"
             android:layout_height="33dp"
-            android:layout_weight="1"
             app:cardBackgroundColor="#fece2f"
             app:cardCornerRadius="2dp"
             app:cardElevation="2dp"
@@ -463,7 +462,7 @@
 
                 <TextView
                     android:id="@+id/t6"
-                    android:layout_width="94dp"
+                    android:layout_width="15dp"
                     android:layout_height="37dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -484,10 +483,10 @@
 
         <EditText
             android:id="@+id/infoservicedate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_weight="1"
             android:hint="Next Service"
+            android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 
@@ -495,9 +494,11 @@
 
     <LinearLayout
         android:id="@+id/L7"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginLeft="125dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -505,39 +506,15 @@
         app:layout_constraintTop_toBottomOf="@+id/L6"
         app:layout_constraintVertical_bias="0.038">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="33dp"
-            android:layout_weight="1"
-            app:cardBackgroundColor="#fece2f"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="2dp"
-            app:cardMaxElevation="16dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/nexts"
-                    android:layout_width="94dp"
-                    android:layout_height="37dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginBottom="1dp"
-                    android:gravity="center"
-                    android:text="Update Next Service."
-                    app:fontFamily="@font/baloo" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+       <Button
+           android:id="@+id/nexts"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Update Next Service"
+           android:textColor="@color/places_text_white_alpha_87"
+           android:background="@color/quantum_black_100"
+           android:padding="10dp"
+           android:gravity="center"/>
 
 
     </LinearLayout>
