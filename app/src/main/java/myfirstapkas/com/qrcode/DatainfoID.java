@@ -22,7 +22,7 @@ public class DatainfoID extends dashboard{
     String idate;
     String itime;
     String serviceinfo;
-    //EditText infoi;
+    TextView infoi;
     TextView name;
    TextView date;
     TextView time;
@@ -36,7 +36,7 @@ public class DatainfoID extends dashboard{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datainfo_id);
 
-         // infoi =findViewById(R.id.dataid);
+         infoi =findViewById(R.id.infoid);
            name =findViewById(R.id.infoname);
          date= findViewById(R.id.infodate);
           time =findViewById(R.id.infotime);
@@ -71,10 +71,12 @@ public class DatainfoID extends dashboard{
                             serviceinfo = dataSnapshot.child(message).child("Service").getValue().toString();
 
 
-                            name.setText("NAME  "+siname);
-                            date.setText("DATE  "+idate);
-                            time.setText("TIME  "+itime);
-                            service.setText("SERVICE "+ serviceinfo);
+                            name.setText(siname);
+                            date.setText(idate);
+                            time.setText(itime);
+                            service.setText(serviceinfo);
+                            infoi.setText(message);
+
 
 
 
