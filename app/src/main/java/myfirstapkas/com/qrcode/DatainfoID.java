@@ -86,11 +86,7 @@ public class DatainfoID extends dashboard{
                                 uptime = Math.round(((mtbf/(mtbf+mttr))*100));
                                 //efficiency.setText(uptime);
                                 stringupptime = Double.toString(uptime);
-                                Toast.makeText(DatainfoID.this, stringupptime, Toast.LENGTH_SHORT).show();
-
                                 stringOfmtbf = Double.toString(mtbf);
-
-
                             }
 
 
