@@ -101,6 +101,7 @@ public class DatainfoID extends dashboard{
                             service.setText(serviceinfo);
                             infoi.setText(message);
                             installby.setText(stringinstallby);
+                        time.setText(idate);
 
                     }
 

@@ -3,6 +3,7 @@ package myfirstapkas.com.qrcode;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -31,17 +32,15 @@ import java.util.SimpleTimeZone;
 public class DataEntry extends AppCompatActivity {
     Button btn;
     Button Enter;
-    Button Generate;
     TextInputLayout itemid,itemname,itemdate,itemtime,upcomingservice,service,serviceby;
-    // FirebaseDatabase Database;
-    // DatabaseReference myRef;
-    Calendar calendar;
+   Calendar calendar;
     String currentDate;
-    String servicedatest,stringserviceby;
+    String servicedatest;
 
-    //private FirebaseAuth.AuthStateListener mAuthStateListener;
+
     private DatePickerDialog.OnDateSetListener mdateset;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -57,7 +56,7 @@ public class DataEntry extends AppCompatActivity {
 
 
 
-        serviceby = findViewById(R.id.servicedate);
+        serviceby = findViewById(R.id.serviceby);
         btn = findViewById(R.id.logout);
         itemdate =findViewById(R.id.servicedate);
         Enter = findViewById(R.id.button);
@@ -66,7 +65,7 @@ public class DataEntry extends AppCompatActivity {
        itemtime = findViewById(R.id.time);
 
 
-        service = findViewById(R.id.nextservice);
+        //service = findViewById(R.id.nextservice);
         upcomingservice = findViewById(R.id.nextservice);
         currentDate = DateFormat.getDateInstance().format(calendar.getTime());
         itemdate.getEditText().setText(currentDate);
@@ -109,7 +108,7 @@ public class DataEntry extends AppCompatActivity {
                   String date = itemdate.getEditText().getText().toString();
                   String upcoming = upcomingservice.getEditText().getText().toString();
                  String Service = service.getEditText().getText().toString();
-                    stringserviceby = serviceby.getEditText().getText().toString();
+                    String stringserviceby = serviceby.getEditText().getText().toString();
 
                 if(!id.equalsIgnoreCase(""))
                 {
@@ -120,12 +119,12 @@ public class DataEntry extends AppCompatActivity {
                         {//if(!service.equalsIgnoreCase(""))
                             myRef.child("ID").setValue(id);
                             myRef.child(id).child("ID").setValue(id);
-                myRef.child(id).child("Name").setValue(name);
-                myRef.child(id).child("Time").setValue(time);
-                myRef.child(id).child("DateofInstallation").setValue(date);
-                myRef.child(id).child("ServiceBy").setValue(stringserviceby);
-                myRef.child(id).child("Upcoming").child("1").setValue(upcoming);
-                myRef.child(id).child("Noofservice").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
+                            myRef.child(id).child("Name").setValue(name);
+                            myRef.child(id).child("Time").setValue(time);
+                            myRef.child(id).child("DateofInstallation").setValue(date);
+                            myRef.child(id).child("ServiceBy").setValue(stringserviceby);
+                            myRef.child(id).child("Upcoming").child("1").setValue(upcoming);
+                            myRef.child(id).child("Noofservice").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
