@@ -107,7 +107,7 @@ public class DataEntry extends AppCompatActivity {
                  String time = itemtime.getEditText().getText().toString();
                   String date = itemdate.getEditText().getText().toString();
                   String upcoming = upcomingservice.getEditText().getText().toString();
-                 String Service = service.getEditText().getText().toString();
+        //         String Service = service.getEditText().getText().toString();
                     String stringserviceby = serviceby.getEditText().getText().toString();
 
                 if(!id.equalsIgnoreCase(""))

@@ -308,21 +308,17 @@
 
                 <TextView
                     android:id="@+id/T4"
-                    android:layout_width="94dp"
-                    android:layout_height="37dp"
-                    android:layout_alignParentStart="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="11dp"
+                    android:layout_marginLeft="28dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="29dp"
+                    android:layout_marginBottom="-1dp"
                     android:gravity="center"
-                    android:text="Date of Installation."
+                    android:text="InstallationDate."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -399,7 +395,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Previous Service Date."
+                    android:text="PreService Date."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
