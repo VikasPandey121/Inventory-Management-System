@@ -21,12 +21,15 @@ public class DatainfoID extends dashboard{
 
     String siname,idate,itime,serviceinfo,message,noofservice,firenoofservice,update ,repairtime,stringpredate,stringworkingtime;
     String stringupptime;
-    float mtbf,mttr,uptime;
-    float predate,postdate,workingtime;
+    Double mtbf,mttr,uptime;
+    Double predate,postdate,workingtime;
     TextView infoi,name,date,time,service,installtime,efficiency;
     Button updatese;
     EditText servdate;
     DatabaseReference myRef;
+
+    //Might I need to remove this one
+    String stringOfmtbf;
 
     int x = 1;
     @Override
@@ -62,7 +65,7 @@ public class DatainfoID extends dashboard{
                        //   serviceinfo = dataSnapshot.child(message).child("Service").getValue().toString();
                           firenoofservice=dataSnapshot.child(message).child("Noofservice").getValue().toString();
                           int noOfServiceinInt = Integer.parseInt(firenoofservice);
-                          predate = 270120;
+                          predate = 270120.00;
                             if(noOfServiceinInt==1){
 
                                     efficiency.setText("99%");
@@ -71,15 +74,17 @@ public class DatainfoID extends dashboard{
                             {
                                 stringpredate = dataSnapshot.child(message).child("Upcoming").child("2").getValue().toString();
 
-                                postdate = Float.parseFloat(stringpredate);
+                                postdate = Double.parseDouble(stringpredate);
                                 stringworkingtime= dataSnapshot.child(message).child("RepairTime").child("2").getValue().toString();
-                                workingtime = Float.parseFloat(stringworkingtime);
-                                mtbf = (((postdate-predate)*(30/100))-workingtime);
+                                workingtime = Double.parseDouble(stringworkingtime);
+                                mtbf = (Double)(((postdate-predate)*(0.3))-workingtime);
                                 mttr = workingtime;
-                                uptime = (mtbf/(mtbf+mttr));
+                                uptime = ((mtbf/(mtbf+mttr))*100);
                                 //efficiency.setText(uptime);
-                                stringupptime = Float.toString(uptime);
+                                stringupptime = Double.toString(uptime);
                                 Toast.makeText(DatainfoID.this, stringupptime, Toast.LENGTH_SHORT).show();
+
+                                stringOfmtbf = Double.toString(mtbf);
 
 
                             }
