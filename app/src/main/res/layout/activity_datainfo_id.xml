@@ -610,7 +610,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Installation Time."
+                    android:text="Repair Time."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -619,7 +619,7 @@
             android:id="@+id/infoinstalltime"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:hint="Installation Time"
+            android:hint="Repair Time"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
