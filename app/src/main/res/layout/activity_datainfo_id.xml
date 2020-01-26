@@ -107,8 +107,8 @@
 
                 <TextView
                     android:id="@+id/infoid"
-                    android:layout_width="102dp"
-                    android:layout_height="32dp"
+                    android:layout_width="164dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="true"
@@ -117,9 +117,9 @@
                     android:layout_marginStart="11dp"
                     android:layout_marginLeft="11dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="63dp"
-                    android:layout_marginRight="63dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="31dp"
+                    android:layout_marginRight="31dp"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center|center_horizontal"
                     android:text="ID"
                     app:fontFamily="@font/baloo" />
@@ -169,7 +169,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="ItemName."
+                    android:text="Item Name."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -186,8 +186,8 @@
 
                 <TextView
                     android:id="@+id/infoname"
-                    android:layout_width="102dp"
-                    android:layout_height="32dp"
+                    android:layout_width="162dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="true"
@@ -196,9 +196,9 @@
                     android:layout_marginStart="11dp"
                     android:layout_marginLeft="11dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="63dp"
-                    android:layout_marginRight="63dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="33dp"
+                    android:layout_marginRight="33dp"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center|center_horizontal"
                     android:text="Name"
                     app:fontFamily="@font/baloo" />
@@ -248,7 +248,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Install By."
+                    android:text="Install By"
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -265,8 +265,8 @@
 
                 <TextView
                     android:id="@+id/installby"
-                    android:layout_width="102dp"
-                    android:layout_height="32dp"
+                    android:layout_width="172dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="true"
@@ -275,9 +275,9 @@
                     android:layout_marginStart="11dp"
                     android:layout_marginLeft="11dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="63dp"
-                    android:layout_marginRight="63dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="23dp"
+                    android:layout_marginRight="23dp"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center|center_horizontal"
                     android:text="Install By"
                     app:fontFamily="@font/baloo" />
@@ -323,7 +323,7 @@
                     android:layout_marginRight="29dp"
                     android:layout_marginBottom="-1dp"
                     android:gravity="center"
-                    android:text="InstallationDate."
+                    android:text="Installation Date."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -340,8 +340,8 @@
 
                 <TextView
                     android:id="@+id/infodate"
-                    android:layout_width="102dp"
-                    android:layout_height="32dp"
+                    android:layout_width="187dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="true"
@@ -350,9 +350,9 @@
                     android:layout_marginStart="11dp"
                     android:layout_marginLeft="11dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="63dp"
-                    android:layout_marginRight="63dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center|center_horizontal"
                     android:text="Date of Installation"
                     app:fontFamily="@font/baloo" />
@@ -388,8 +388,8 @@
 
                 <TextView
                     android:id="@+id/t5"
-                    android:layout_width="94dp"
-                    android:layout_height="37dp"
+                    android:layout_width="187dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="true"
@@ -398,11 +398,11 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="11dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center"
-                    android:text="PreService Date."
+                    android:text="Previous Service Date."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -419,8 +419,8 @@
 
                 <TextView
                     android:id="@+id/infotime"
-                    android:layout_width="94dp"
-                    android:layout_height="37dp"
+                    android:layout_width="184dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="true"
@@ -429,9 +429,9 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="11dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center"
                     android:text="Previous Service Date."
                     app:fontFamily="@font/baloo" />
@@ -482,7 +482,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Efficiency."
+                    android:text="Efficiency"
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -499,8 +499,8 @@
 
                 <TextView
                     android:id="@+id/efficiency"
-                    android:layout_width="94dp"
-                    android:layout_height="37dp"
+                    android:layout_width="169dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="true"
@@ -509,9 +509,9 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="11dp"
                     android:layout_marginTop="3dp"
-                    android:layout_marginEnd="40dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginBottom="1dp"
+                    android:layout_marginEnd="21dp"
+                    android:layout_marginRight="21dp"
+                    android:layout_marginBottom="0dp"
                     android:gravity="center"
                     android:text="Efficiency."
                     app:fontFamily="@font/baloo" />
