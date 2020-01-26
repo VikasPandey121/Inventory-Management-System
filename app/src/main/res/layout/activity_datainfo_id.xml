@@ -449,6 +449,85 @@
         app:layout_constraintVertical_bias="0.038">
 
         <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="#fece2f"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardMaxElevation="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/t9"
+                    android:layout_width="94dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="1dp"
+                    android:gravity="center"
+                    android:text="Efficiency."
+                    app:fontFamily="@font/baloo" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            app:cardElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/efficiency"
+                    android:layout_width="94dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="1dp"
+                    android:gravity="center"
+                    android:text="Efficiency."
+                    app:fontFamily="@font/baloo" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/L6"
+        app:layout_constraintVertical_bias="0.038">
+
+        <androidx.cardview.widget.CardView
             android:layout_width="205dp"
             android:layout_height="33dp"
             app:cardBackgroundColor="#fece2f"
@@ -491,9 +570,64 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/L8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/L7"
+        app:layout_constraintVertical_bias="0.038">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="205dp"
+            android:layout_height="33dp"
+            app:cardBackgroundColor="#fece2f"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardMaxElevation="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/t8"
+                    android:layout_width="15dp"
+                    android:layout_height="37dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="1dp"
+                    android:gravity="center"
+                    android:text="Installation Time."
+                    app:fontFamily="@font/baloo" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/infoinstalltime"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Installation Time"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/L7"
+        android:id="@+id/L9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -503,7 +637,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/L6"
+        app:layout_constraintTop_toBottomOf="@+id/L8"
         app:layout_constraintVertical_bias="0.038">
 
        <Button

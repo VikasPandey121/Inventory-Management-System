@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +8,14 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:background="#ffa000"
     tools:context=".GeneratorActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="105dp"
+        android:textColor="@color/quantum_black_100"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:text="QR Code Generator"/>
 
     <Button
@@ -19,6 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="50dp"
+        android:textColor="@color/quantum_white_100"
+        android:background="@color/quantum_black_100"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:padding="10dp"
         android:text="GENERATE" />
 
     <Button
@@ -26,6 +35,10 @@
         android:layout_marginTop="100dp"
         android:layout_marginLeft="200dp"
         android:layout_width="wrap_content"
+        android:textColor="@color/quantum_white_100"
+        android:background="@color/quantum_black_100"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:padding="10dp"
         android:layout_height="wrap_content"
         android:text="EXPORTQR" />
 

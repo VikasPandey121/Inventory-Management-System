@@ -22,15 +22,12 @@ public class DatainfoID extends dashboard{
     String idate;
     String itime;
     String serviceinfo;
-    TextView infoi;
-    TextView name;
-   TextView date;
-    TextView time;
-    TextView service;
+    TextView infoi,name,date,time,service,installtime;
     Button updatese;
     EditText servdate;
     DatabaseReference myRef;
     String message;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,23 +40,15 @@ public class DatainfoID extends dashboard{
           service = findViewById(R.id.serviceinfo);
           updatese = findViewById(R.id.nexts);
           servdate = findViewById(R.id.infoservicedate);
-          //Need to delete after try
+          installtime = findViewById(R.id.infoinstalltime);
          Bundle bundle = getIntent().getExtras();
          message = bundle.getString("message");
         
 
-        //final Button  info =findViewById(R.id.enter);
-     //   info.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-      //     public void onClick(View view) {
+
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-               // DatabaseReference
                         myRef = database.getReference("Inventory");
-              // servicehj = scanid;
-
-                //remove below line
-
 
              myRef.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -69,6 +58,8 @@ public class DatainfoID extends dashboard{
                          idate = dataSnapshot.child(message).child("Date").getValue().toString();
                              itime = dataSnapshot.child(message).child("Time").getValue().toString();
                             serviceinfo = dataSnapshot.child(message).child("Service").getValue().toString();
+
+
 
 
                             name.setText(siname);
@@ -95,7 +86,9 @@ public class DatainfoID extends dashboard{
             @Override
             public void onClick(View view) {
                 String update = servdate.getText().toString();
+                String repairtime = installtime.getText().toString();
                 myRef.child(message).child("Upcoming").child(update).setValue(update);
+                myRef.child(message).child("RepairTime").child(repairtime).setValue(repairtime);
             }
         });
 
