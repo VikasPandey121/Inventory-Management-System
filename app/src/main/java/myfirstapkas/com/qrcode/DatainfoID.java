@@ -1,7 +1,6 @@
 package myfirstapkas.com.qrcode;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,8 +20,12 @@ public class DatainfoID extends dashboard{
 
     String siname,idate,itime,serviceinfo,message,noofservice,firenoofservice,update ,repairtime,stringpredate,stringworkingtime;
     String stringupptime;
-    Double mtbf,mttr,uptime;
-    Double predate,postdate,workingtime;
+    Double mtbf;
+    Long mttr;
+    Long uptime;
+    double predate;
+    Long postdate;
+    Long workingtime;
     TextView infoi,name,date,time,service,installtime,efficiency;
     Button updatese;
     EditText servdate;
@@ -74,12 +77,12 @@ public class DatainfoID extends dashboard{
                             {
                                 stringpredate = dataSnapshot.child(message).child("Upcoming").child("2").getValue().toString();
 
-                                postdate = Double.parseDouble(stringpredate);
+                                postdate = Long.parseLong(stringpredate);
                                 stringworkingtime= dataSnapshot.child(message).child("RepairTime").child("2").getValue().toString();
-                                workingtime = Double.parseDouble(stringworkingtime);
+                                workingtime = Long.parseLong(stringworkingtime);
                                 mtbf = (Double)(((postdate-predate)*(0.3))-workingtime);
                                 mttr = workingtime;
-                                uptime = ((mtbf/(mtbf+mttr))*100);
+                                uptime = Math.round(((mtbf/(mtbf+mttr))*100));
                                 //efficiency.setText(uptime);
                                 stringupptime = Double.toString(uptime);
                                 Toast.makeText(DatainfoID.this, stringupptime, Toast.LENGTH_SHORT).show();
