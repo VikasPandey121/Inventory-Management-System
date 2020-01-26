@@ -19,17 +19,15 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DatainfoID extends dashboard{
 
-    String siname;
-    String idate;
-    String itime;
-    String serviceinfo;
-    TextView infoi,name,date,time,service,installtime;
+    String siname,idate,itime,serviceinfo,message,noofservice,firenoofservice,update ,repairtime,stringpredate,stringworkingtime;
+    String stringupptime;
+    float mtbf,mttr,uptime;
+    float predate,postdate,workingtime;
+    TextView infoi,name,date,time,service,installtime,efficiency;
     Button updatese;
     EditText servdate;
     DatabaseReference myRef;
-    String message;
-    String noofservice;
-    String firenoofservice;
+
     int x = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,44 +35,62 @@ public class DatainfoID extends dashboard{
         setContentView(R.layout.activity_datainfo_id);
 
 
-         infoi =findViewById(R.id.infoid);
+           infoi =findViewById(R.id.infoid);
            name =findViewById(R.id.infoname);
-         date= findViewById(R.id.infodate);
-          time =findViewById(R.id.infotime);
-          service = findViewById(R.id.serviceinfo);
-          updatese = findViewById(R.id.nexts);
-          servdate = findViewById(R.id.infoservicedate);
-          installtime = findViewById(R.id.infoinstalltime);
-         Bundle bundle = getIntent().getExtras();
-         message = bundle.getString("message");
+           date= findViewById(R.id.infodate);
+           time =findViewById(R.id.infotime);
+           service = findViewById(R.id.serviceinfo);
+           updatese = findViewById(R.id.nexts);
+           efficiency =findViewById(R.id.efficiency);
+           servdate = findViewById(R.id.infoservicedate);
+           installtime = findViewById(R.id.infoinstalltime);
+           Bundle bundle = getIntent().getExtras();
+           message = bundle.getString("message");
         
 
 
-                final FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-                        myRef = database.getReference("Inventory");
+           final FirebaseDatabase database = FirebaseDatabase.getInstance();
+           myRef = database.getReference("Inventory");
 
              myRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                       siname = dataSnapshot.child(message).child("Name").getValue().toString();
-                         idate = dataSnapshot.child(message).child("Date").getValue().toString();
-                             itime = dataSnapshot.child(message).child("Time").getValue().toString();
-                            serviceinfo = dataSnapshot.child(message).child("Service").getValue().toString();
-                            firenoofservice=dataSnapshot.child(message).child("Noofservice").getValue().toString();
+                          siname = dataSnapshot.child(message).child("Name").getValue().toString();
+                          idate = dataSnapshot.child(message).child("DateofInstallation").getValue().toString();
+                          itime = dataSnapshot.child(message).child("Time").getValue().toString();
+                       //   serviceinfo = dataSnapshot.child(message).child("Service").getValue().toString();
+                          firenoofservice=dataSnapshot.child(message).child("Noofservice").getValue().toString();
+                          int noOfServiceinInt = Integer.parseInt(firenoofservice);
+                          predate = 270120;
+                            if(noOfServiceinInt==1){
 
+                                    efficiency.setText("99%");
+
+                            }else
+                            {
+                                stringpredate = dataSnapshot.child(message).child("Upcoming").child("2").getValue().toString();
+
+                                postdate = Float.parseFloat(stringpredate);
+                                stringworkingtime= dataSnapshot.child(message).child("RepairTime").child("2").getValue().toString();
+                                workingtime = Float.parseFloat(stringworkingtime);
+                                mtbf = (((postdate-predate)*(30/100))-workingtime);
+                                mttr = workingtime;
+                                uptime = (mtbf/(mtbf+mttr));
+                                //efficiency.setText(uptime);
+                                stringupptime = Float.toString(uptime);
+                                Toast.makeText(DatainfoID.this, stringupptime, Toast.LENGTH_SHORT).show();
+
+
+                            }
 
 
 
                             name.setText(siname);
                             date.setText(idate);
-                            time.setText(itime);
+                            time.setText(stringpredate);
                             service.setText(serviceinfo);
                             infoi.setText(message);
-
-
-
 
                     }
 
@@ -84,14 +100,11 @@ public class DatainfoID extends dashboard{
                     }
                 });
 
-
-            //}
-     // });
         updatese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String update = servdate.getText().toString();
-                String repairtime = installtime.getText().toString();
+                update = servdate.getText().toString();
+                repairtime = installtime.getText().toString();
                 x = Integer.parseInt(firenoofservice);
                 x=x+1;
                 noofservice = Integer.toString(x);
@@ -112,6 +125,13 @@ public class DatainfoID extends dashboard{
                 }else{
                     Toast.makeText(DatainfoID.this, "Enter ServiceDate", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        efficiency.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                efficiency.setText(stringupptime);
             }
         });
 
