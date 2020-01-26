@@ -19,14 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 public class DatainfoID extends dashboard{
 
     String siname,idate,itime,serviceinfo,message,noofservice,firenoofservice,update ,repairtime,stringpredate,stringworkingtime;
-    String stringupptime;
+    String stringupptime,stringinstallby;
     Double mtbf;
     Long mttr;
     Long uptime;
     double predate;
     Long postdate;
     Long workingtime;
-    TextView infoi,name,date,time,service,installtime,efficiency;
+    TextView infoi,name,date,time,service,installtime,efficiency,installby;
     Button updatese;
     EditText servdate;
     DatabaseReference myRef;
@@ -40,12 +40,12 @@ public class DatainfoID extends dashboard{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datainfo_id);
 
-
+            installby =findViewById(R.id.installby);
            infoi =findViewById(R.id.infoid);
            name =findViewById(R.id.infoname);
            date= findViewById(R.id.infodate);
            time =findViewById(R.id.infotime);
-           service = findViewById(R.id.serviceinfo);
+           service = findViewById(R.id.infotime);
            updatese = findViewById(R.id.nexts);
            efficiency =findViewById(R.id.efficiency);
            servdate = findViewById(R.id.infoservicedate);
@@ -67,6 +67,7 @@ public class DatainfoID extends dashboard{
                           itime = dataSnapshot.child(message).child("Time").getValue().toString();
                        //   serviceinfo = dataSnapshot.child(message).child("Service").getValue().toString();
                           firenoofservice=dataSnapshot.child(message).child("Noofservice").getValue().toString();
+                          stringinstallby= dataSnapshot.child(message).child("ServiceBy").getValue().toString();
                           int noOfServiceinInt = Integer.parseInt(firenoofservice);
                           predate = 270120.00;
                             if(noOfServiceinInt==1){
@@ -99,6 +100,7 @@ public class DatainfoID extends dashboard{
                             time.setText(stringpredate);
                             service.setText(serviceinfo);
                             infoi.setText(message);
+                            installby.setText(stringinstallby);
 
                     }
 

@@ -32,12 +32,12 @@ public class DataEntry extends AppCompatActivity {
     Button btn;
     Button Enter;
     Button Generate;
-    TextInputLayout itemid,itemname,itemdate,itemtime,upcomingservice,service;
+    TextInputLayout itemid,itemname,itemdate,itemtime,upcomingservice,service,serviceby;
     // FirebaseDatabase Database;
     // DatabaseReference myRef;
     Calendar calendar;
     String currentDate;
-    String servicedatest;
+    String servicedatest,stringserviceby;
 
     //private FirebaseAuth.AuthStateListener mAuthStateListener;
     private DatePickerDialog.OnDateSetListener mdateset;
@@ -57,13 +57,14 @@ public class DataEntry extends AppCompatActivity {
 
 
 
-
+        serviceby = findViewById(R.id.servicedate);
         btn = findViewById(R.id.logout);
         itemdate =findViewById(R.id.servicedate);
         Enter = findViewById(R.id.button);
         itemid = findViewById(R.id.itemid);
         itemname = findViewById(R.id.itemname);
        itemtime = findViewById(R.id.time);
+
 
         service = findViewById(R.id.nextservice);
         upcomingservice = findViewById(R.id.nextservice);
@@ -108,7 +109,7 @@ public class DataEntry extends AppCompatActivity {
                   String date = itemdate.getEditText().getText().toString();
                   String upcoming = upcomingservice.getEditText().getText().toString();
                  String Service = service.getEditText().getText().toString();
-
+                    stringserviceby = serviceby.getEditText().getText().toString();
 
                 if(!id.equalsIgnoreCase(""))
                 {
@@ -122,6 +123,7 @@ public class DataEntry extends AppCompatActivity {
                 myRef.child(id).child("Name").setValue(name);
                 myRef.child(id).child("Time").setValue(time);
                 myRef.child(id).child("DateofInstallation").setValue(date);
+                myRef.child(id).child("ServiceBy").setValue(stringserviceby);
                 myRef.child(id).child("Upcoming").child("1").setValue(upcoming);
                 myRef.child(id).child("Noofservice").setValue("1").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

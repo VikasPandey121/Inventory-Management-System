@@ -38,7 +38,7 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Inventory Details"
+        android:text="Update Service"
         android:textSize="24sp"
         app:fontFamily="@font/bungee"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -167,7 +167,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Name."
+                    android:text="ItemName."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -245,7 +245,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Time."
+                    android:text="Install By."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -260,7 +260,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/infotime"
+                    android:id="@+id/installby"
                     android:layout_width="102dp"
                     android:layout_height="32dp"
                     android:layout_alignParentStart="true"
@@ -275,7 +275,7 @@
                     android:layout_marginRight="63dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center|center_horizontal"
-                    android:text="Time"
+                    android:text="Install By"
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -322,7 +322,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Date."
+                    android:text="Date of Installation."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -352,7 +352,7 @@
                     android:layout_marginRight="63dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center|center_horizontal"
-                    android:text="Date"
+                    android:text="Date of Installation"
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -399,7 +399,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Service Date."
+                    android:text="Previous Service Date."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -414,7 +414,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/serviceinfo"
+                    android:id="@+id/infotime"
                     android:layout_width="94dp"
                     android:layout_height="37dp"
                     android:layout_alignParentStart="true"
@@ -429,7 +429,7 @@
                     android:layout_marginRight="40dp"
                     android:layout_marginBottom="1dp"
                     android:gravity="center"
-                    android:text="Service Date."
+                    android:text="Previous Service Date."
                     app:fontFamily="@font/baloo" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

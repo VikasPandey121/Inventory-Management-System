@@ -1,5 +1,5 @@
 <resources>
-      <string name="welcome_to_aai_inventory_app">Welcome To AAI Inventory App</string>
+    <string name="welcome_to_aai_inventory_app">Welcome To AAI Inventory App</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="app_name">FareCare</string>

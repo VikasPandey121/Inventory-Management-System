@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/applog"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dashboard"></activity>
+        <activity android:name=".InventoryDetails"></activity>
+        <activity android:name=".dashboard" />
         <activity android:name=".MapsActivityCurrentPlace" />
 
         <meta-data
