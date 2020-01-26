@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -35,6 +36,11 @@ public class dashboard extends AppCompatActivity implements OnNavigationItemSele
     String scanid;
     TextView textView;
     ImageView installInventory, scannerInventory, locateInventory, groupChat;
+
+    public void hidekeyboard(View v){
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),0);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

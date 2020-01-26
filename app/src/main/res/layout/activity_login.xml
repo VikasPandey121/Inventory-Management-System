@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".loginActivity"
-    android:orientation="vertical"
     android:background="#fff"
-    android:padding="20dp">
+    android:onClick="hidekeyboard"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".loginActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/logoimage"
         android:layout_width="120dp"
         android:layout_height="100dp"
         android:src="@drawable/logo"
-        android:transitionName="logo_image"/>
+        android:transitionName="logo_image" />
 
     <TextView
         android:id="@+id/logoname"
@@ -30,9 +31,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="antic"
         android:text="Sign In to continue"
-        android:textSize="18sp"
-        android:fontFamily="antic"/>
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,32 +41,33 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginemail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/loginemail"
             android:hint="Username"
-            android:transitionName="user_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:transitionName="user_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginpassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/loginpassword"
             android:hint="Password"
             android:transitionName="password_tran"
-            app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -77,17 +79,18 @@
             android:elevation="0dp"
             android:text="Forget Password?"
             android:textAllCaps="false"
-            android:transitionName="forgot_tran"/>
+            android:transitionName="forgot_tran" />
+
         <Button
             android:id="@+id/loginbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:background="#000"
-            android:textColor="#fff"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:transitionName="button_tran"/>
+            android:background="#000"
+            android:text="Login"
+            android:textColor="#fff"
+            android:transitionName="button_tran" />
 
         <Button
             android:id="@+id/loginsignup"
